@@ -1,0 +1,10 @@
+from django.contrib import admin
+from django.urls import path
+import blog.views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', blog.views.home, name="home"),
+    path('my-post/', blog.views.my_post, name="my-post")
+]
+
