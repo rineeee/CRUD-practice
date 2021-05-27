@@ -14,6 +14,7 @@
 <br/>
 <br/>
 ### method structure
+
 - Create
 ```python
 def new_post(request):
