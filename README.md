@@ -7,6 +7,9 @@
 # Django CRUD Practice Project
 - CRUD 기반 연습용 프로젝트 입니다.
 
+<br/>
+<br/>
+
 ## CRUD
 
 ### 개념
