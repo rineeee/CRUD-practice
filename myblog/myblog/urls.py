@@ -1,5 +1,6 @@
+from django import contrib
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 import blog.views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -11,7 +12,8 @@ urlpatterns = [
     path('new', blog.views.new_post, name="new"),
     path('post/<int:pk>', blog.views.post_detail, name="post-detail"),
     path('post/edit/<int:pk>', blog.views.post_update, name = "post-edit"),
-    path('post/delete/<int:pk>', blog.views.post_delete, name="post-delete")
+    path('post/delete/<int:pk>', blog.views.post_delete, name="post-delete"),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
