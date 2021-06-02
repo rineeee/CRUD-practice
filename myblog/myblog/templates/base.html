@@ -97,6 +97,15 @@
                 </a>
             </li>
             <li class="menu__item">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="menu__link">
+                    <span class="menu__title">
+                        <span class="menu__first-word" data-hover="{{user.username}}">
+                            Sign Out
+                        </span>
+                    </span>
+                </a>
+                {% else %}
                 <a href="{% url 'login' %}" class="menu__link">
                     <span class="menu__title">
                         <span class="menu__first-word" data-hover="Sign">
@@ -107,6 +116,7 @@
                         </span>
                     </span>
                 </a>
+                {% endif %}
             </li>
         </ul>
         {% block mainHeader %}
