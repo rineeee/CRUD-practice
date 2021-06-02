@@ -4,9 +4,9 @@
 
 {% if form.errors %}
 <div class="alert alert-danger">
-<p>{{ form.errors}}</p>
+    <p>{{ form.errors}}</p>
 </div>
-{% endif %} 
+{% endif %}
 
 <div class="container">
     <div class="row">
@@ -17,13 +17,16 @@
                     <form method="post" action="{% url 'signup' %}" class="form-signin">
                         {% csrf_token %}
                         <div class="form-label-group">
-                            <input type="text" name="username" id="username" class="form-control" placeholder="username" required autofocus>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="username"
+                                required autofocus>
                         </div>
                         <div class="form-label-group">
-                            <input type="password" name="password1" id="password1" class="form-control" placeholder="password" required>
+                            <input type="password" name="password1" id="password1" class="form-control"
+                                placeholder="password" required>
                         </div>
                         <div class="form-label-group">
-                            <input type="password" name="password2" id="password2" class="form-control" placeholder="check password" required>
+                            <input type="password" name="password2" id="password2" class="form-control"
+                                placeholder="check password" required>
                         </div>
                         <div>
                             <span>회원이라면 <a href="{% url 'login' %}">로그인 하기</a></span>
@@ -34,6 +37,5 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}
