@@ -13,7 +13,7 @@ urlpatterns = [
     path('post/<int:pk>', blog.views.post_detail, name="post-detail"),
     path('post/edit/<int:pk>', blog.views.post_update, name = "post-edit"),
     path('post/delete/<int:pk>', blog.views.post_delete, name="post-delete"),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
