@@ -6,7 +6,7 @@ def home(request):
 
 
 def my_post(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(author=request.user)
     return render(request, 'myPost.html', {"post_list": posts})
 
 

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.conf import settings
 
 class Post(models.Model):
     # title, body, show, datetime, image
@@ -19,6 +20,7 @@ class Post(models.Model):
     show = models.CharField(max_length = 10, choices=SHOW_TYPES, default=PUBLIC, help_text="비공개 여부")
     datetime = models.DateTimeField(default = timezone.now)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
+    author = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.title
