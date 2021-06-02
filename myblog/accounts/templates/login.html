@@ -27,8 +27,11 @@
                         <div>
                             <input type="checkbox" id="rememberNameCheck">
                             <label class="rememberName-control-label" for="rememberName">
-                                <h6>회원 이름 기억하기</h6>
+                                <span>회원 이름 기억하기</span>
                             </label>
+                        </div>
+                        <div>
+                            <span>회원이 아니라면 <a href="{% url 'signup' %}">계정 생성하기</a></span>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" value="login" type="submit">로그인</button>
                     </form>
