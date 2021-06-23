@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from blog.models import Post
+from blog.models import Post, Comment
 
 def home(request):
     return render(request, 'home.html')
@@ -55,4 +55,13 @@ def post_delete(request, pk):
     post = Post.objects.get(id= pk)
     post.delete()
     return redirect('/my-post')
-            
+
+
+def comment_write(request, pk):
+    if request.method == "POST":
+        comment = Comment()
+        comment.comment_writer = request.user
+        comment.post = get_object_or_404(Post, id=pk)
+        comment.comment_contents = request.POST.get('content')
+        comment.save()
+        return redirect('/post/' + str(pk))
